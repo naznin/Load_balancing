@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Upload Excel</title></head>
+<body>
+  <h1>Choose Excel File</h1>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file"
+      accept=".xls,.xlsx,.csv">
+    <input type="submit" value="Upload">
+  </form>
+  {% if preview %}
+    <h2>Data Preview (first 5 rows)</h2>
+    {{ preview|safe }}
+  {% endif %}
+</body>
+</html>
